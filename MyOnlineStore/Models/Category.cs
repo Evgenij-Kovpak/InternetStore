@@ -1,0 +1,14 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MyOnlineStore.Models
+{
+    public class Category
+    {
+        public int Id { get; set; }
+        [Required, MinLength(2, ErrorMessage = "Введите не менее двух символов")]
+        [RegularExpression(@"^[a-zA-Zа-яА-Я-]+$", ErrorMessage = "Введите только буквы")]
+        public string Name { get; set; }
+        public string Slug { get; set; }
+        public int Sorting { get; set; }
+    }
+}
